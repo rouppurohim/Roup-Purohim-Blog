@@ -16,8 +16,8 @@ const SEO: React.FC<SEOProps> = ({ title, description, image, article, keywords,
   const defaultDesc = "20+ Years of Strategic Agribusiness Excellence. GTM Execution & AI Integration.";
   const metaDesc = description || defaultDesc;
   const metaImage = image || "https://images.unsplash.com/photo-1560693271-4f995893d115?auto=format&fit=crop&q=80&w=1000";
-  const siteUrl = "https://rouppurohim.com"; // Replace with actual domain
-  const twitterHandle = "@roup_purohim"; // Replace with actual handle or remove
+  const siteUrl = "https://roup.me"; // Replace with actual domain
+  const twitterHandle = "@nutaniman"; // Replace with actual handle or remove
 
   // Combine focus keyword with other keywords
   const allKeywords = focusKeyword

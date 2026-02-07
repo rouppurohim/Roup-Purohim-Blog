@@ -12,7 +12,7 @@ interface AppContextType {
 const translations = {
   en: {
     home: 'Home',
-    insights: 'Blog',
+    insights: 'Insights',
     resources: 'Resources',
     about: 'About',
     work: 'Consultation',
@@ -31,7 +31,7 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [lang, setLang] = useState<Language>(() => (localStorage.getItem('lang') as Language) || 'en');
   const [theme, setTheme] = useState<'light' | 'dark'>(() => (localStorage.getItem('theme') as 'light' | 'dark') || 'light');
-  
+
   useEffect(() => {
     localStorage.setItem('lang', lang);
     localStorage.setItem('theme', theme);

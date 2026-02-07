@@ -10,7 +10,7 @@ const Home: React.FC = () => {
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-9">
-              <span className="text-metadata text-accent mb-6 block">The Crackership Methodology: Demand Creation & Channel Mastery</span>
+              <span className="text-metadata text-accent mb-6 block">The Crackership Framework: 3C Models Agronomist Capabilities</span>
               <h1 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-[0.95] text-secondary dark:text-white mb-12">
                 Accelerating <br />
                 Agrochemical <br />
@@ -21,7 +21,7 @@ const Home: React.FC = () => {
                   Consultation
                 </Link>
                 <Link to="/playbook" className="border-2 border-secondary dark:border-white text-secondary dark:text-white px-10 py-5 text-xs font-black uppercase tracking-[0.25em] hover:bg-secondary hover:text-white dark:hover:bg-white dark:hover:text-secondary transition-all rounded-none">
-                  Get Playbook
+                  Get Playbook Free
                 </Link>
                 <div className="h-12 w-px bg-slate-200 dark:bg-slate-800 hidden md:block"></div>
                 <p className="max-w-xs text-xs font-bold text-slate-500 leading-loose uppercase tracking-wider">
@@ -75,8 +75,8 @@ const Home: React.FC = () => {
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="flex justify-between items-end mb-20 border-b hairline-border pb-12">
             <div>
-              <span className="text-metadata text-accent mb-4 block">Latest Blog Posts</span>
-              <h2 className="text-5xl font-black text-secondary dark:text-white tracking-tighter uppercase">Blog</h2>
+              <span className="text-metadata text-accent mb-4 block">Latest Strategic Intelligence</span>
+              <h2 className="text-5xl font-black text-secondary dark:text-white tracking-tighter uppercase">Insights</h2>
             </div>
             <Link to="/insights" className="text-metadata hover:text-accent transition-colors border-b-2 border-accent pb-1">View Full Archive &rarr;</Link>
           </div>

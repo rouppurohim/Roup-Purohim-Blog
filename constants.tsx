@@ -230,52 +230,52 @@ export const MOCK_RESOURCES: Resource[] = [
 export const MOCK_TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
-    name: "Dr. Adrian S.",
-    position: "Regional Director",
-    company: "Global AgriCorp",
-    quote: "Roup's depth of knowledge in agrochemical formulations is unparalleled. He doesn't just give advice; he provides a roadmap to growth.",
-    avatar_url: "https://i.pravatar.cc/150?u=adrian"
+    name: "Geoff Quick",
+    position: "Former President",
+    company: "Nufarm Indonesia",
+    quote: "Roup demonstrated creative talent and reliable diligence. He worked well with colleagues and clients at Nufarm Indonesia.",
+    avatar_url: "/geoff.PNG"
   },
   {
     id: 2,
-    name: "Sarah Chen",
-    position: "Founder",
-    company: "EcoPest Solutions",
-    quote: "The Crackership platform helped our agronomists bridge the gap between technical skill and commercial strategy.",
-    avatar_url: "https://i.pravatar.cc/150?u=sarah"
+    name: "Matthias Tourlousse",
+    position: "Global Key Account Manager",
+    company: "Eastman",
+    quote: "He has great marketing skills and a positive can-do attitude. I recommend Roup for senior product or market manager roles.",
+    avatar_url: "/mathias.PNG"
   }
 ];
 
 export const MOCK_TIMELINE: import('./types').TimelineItem[] = [
   {
-    year: "2024 - Present",
-    role: "Crackership Strategist",
-    company: "Independent Advisory",
-    description: "Architecting GTM frameworks for MNCs entering the Southeast Asian agrochemical market."
+    year: "Nov 2022 – Present",
+    role: "Business Development Manager – Indonesia",
+    company: "Imaspro Resources Sdn Bhd",
+    description: "Led national business expansion strategy and commercialization of hybrid bio-stimulant + fungicide products, driving revenue growth across priority regions."
   },
   {
-    year: "2018 - 2023",
-    role: "Regional Commercial Director",
-    company: "Asia-Pac AgriSolutions",
-    description: "Led a team of 150+ agronomists to achieve $200M in annual revenue across 4 key territories."
+    year: "Sep 2014 – Oct 2022",
+    role: "Agronomist & Marketing Strategist – Indonesia",
+    company: "Eastman Chemical Company",
+    description: "Led national WP-to-WG fungicide formulation conversion achieving >100 tons annual sales and built long-term distributor capabilities."
   },
   {
-    year: "2012 - 2018",
-    role: "Head of Marketing",
-    company: "Nusantara Crop Science",
-    description: "Pioneered the 'Digital Agronomist' initiative, integrating mobile CRM with field activities."
+    year: "Sep 2013 – Aug 2014",
+    role: "Sales & Marketing Manager",
+    company: "PT Nusa Mandiri Utama",
+    description: "Expanded plantation market coverage in Sumatera and initiated new product portfolio registrations to close portfolio gaps."
   },
   {
-    year: "2005 - 2012",
-    role: "Senior Agronomist",
-    company: "Global Chem",
-    description: "Managed technical trials for rice and corn portfolios, establishing the efficacy protocols used today."
+    year: "Apr 2008 – Jul 2013",
+    role: "Marketing & Product Development Manager",
+    company: "PT Sari Kresna Kimia",
+    description: "Accelerated product adoption through integrated technical marketing, field execution workshops, and crop-focused product messaging."
   },
   {
-    year: "2003",
-    role: "Field Technical Officer",
-    company: "Start of Career",
-    description: "Began as a boots-on-the-ground scout, learning the raw realities of pest pressure and farmer psychology."
+    year: "2002 – 2008",
+    role: "Market Development Executive to Manager",
+    company: "PT Nufarm Indonesia",
+    description: "Managed national product launch readiness, aligned technical data with distributor preparation, and oversaw brand consistency standards."
   }
 ];
 
