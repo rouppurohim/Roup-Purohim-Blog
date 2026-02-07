@@ -1,0 +1,7 @@
+{
+  "name": "Roup Purohim - Authority Hub",
+  "description": "Professional authority hub for Roup Purohim, Strategic Agribusiness Leader & AI Strategist. 20+ Years of Agrochemical Expertise.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

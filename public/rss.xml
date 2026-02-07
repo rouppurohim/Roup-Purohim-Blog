@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Roup Purohim | Crackership Strategist</title>
+    <link>https://roup.me</link>
+    <description>Strategic insights on agrochemical demand creation, GTM architecture, and channel mastery.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Feb 2026 02:06:26 GMT</lastBuildDate>
+    <atom:link href="https://roup.me/rss.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title><![CDATA[The Crackership Methodology]]></title>
+      <link>https://roup.me/#/crackership-methodology</link>
+      <description><![CDATA[Transforming agronomists into demand creation engines through strategic commercial literacy.]]></description>
+      <category>Market Strategy & GTM</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+      <guid>https://roup.me/#/crackership-methodology</guid>
+    </item>
+  
+    <item>
+      <title><![CDATA[Retailer Psychology 101]]></title>
+      <link>https://roup.me/#/retailer-psychology-101</link>
+      <description><![CDATA[Understanding the kiosk owner mindset and converting passive stockists into active partners.]]></description>
+      <category>Demand Creation Strategy</category>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
+      <guid>https://roup.me/#/retailer-psychology-101</guid>
+    </item>
+  
+    <item>
+      <title><![CDATA[The AI Field Audit Revolution]]></title>
+      <link>https://roup.me/#/ai-field-audit-revolution</link>
+      <description><![CDATA[How GPT-powered tools are transforming agronomist productivity and demo validation.]]></description>
+      <category>AI-Driven Agribusiness</category>
+      <pubDate>Sun, 05 Jan 2025 00:00:00 GMT</pubDate>
+      <guid>https://roup.me/#/ai-field-audit-revolution</guid>
+    </item>
+  
+  </channel>
+</rss>
