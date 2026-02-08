@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MOCK_TESTIMONIALS } from '../constants';
 
 const WorkWithMe: React.FC = () => {
   const featuredTestimonial = MOCK_TESTIMONIALS[0];
+  const [formData, setFormData] = useState({ name: '', email: '', context: '' });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Consultation Request: ${formData.name}`);
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nContext:\n${formData.context}`);
+    window.location.href = `mailto:roup.purohim@gmail.com?subject=${subject}&body=${body}`;
+  };
 
   return (
     <div className="bg-background dark:bg-darkbg min-h-screen">
@@ -63,19 +71,37 @@ const WorkWithMe: React.FC = () => {
               <h2 className="text-2xl font-black text-secondary dark:text-white mb-2 uppercase tracking-widest">Request Briefing</h2>
               <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-12">Confidential & Direct</p>
 
-              <form className="space-y-8">
+              <form className="space-y-8" onSubmit={handleSubmit}>
                 <div className="space-y-6">
                   <div>
                     <label className="text-[9px] font-black uppercase text-slate-400 tracking-[0.2em] mb-2 block">Name</label>
-                    <input type="text" className="w-full bg-slate-50 dark:bg-slate-800 border hairline-border px-4 py-3 text-xs font-bold focus:outline-none focus:border-accent transition-all dark:text-white rounded-none" />
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full bg-slate-50 dark:bg-slate-800 border hairline-border px-4 py-3 text-xs font-bold focus:outline-none focus:border-accent transition-all dark:text-white rounded-none"
+                    />
                   </div>
                   <div>
                     <label className="text-[9px] font-black uppercase text-slate-400 tracking-[0.2em] mb-2 block">Work Email</label>
-                    <input type="email" className="w-full bg-slate-50 dark:bg-slate-800 border hairline-border px-4 py-3 text-xs font-bold focus:outline-none focus:border-accent transition-all dark:text-white rounded-none" />
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full bg-slate-50 dark:bg-slate-800 border hairline-border px-4 py-3 text-xs font-bold focus:outline-none focus:border-accent transition-all dark:text-white rounded-none"
+                    />
                   </div>
                   <div>
                     <label className="text-[9px] font-black uppercase text-slate-400 tracking-[0.2em] mb-2 block">Brief Context</label>
-                    <textarea rows={3} className="w-full bg-slate-50 dark:bg-slate-800 border hairline-border px-4 py-3 text-xs font-bold focus:outline-none focus:border-accent transition-all dark:text-white rounded-none resize-none"></textarea>
+                    <textarea
+                      rows={3}
+                      required
+                      value={formData.context}
+                      onChange={(e) => setFormData({ ...formData, context: e.target.value })}
+                      className="w-full bg-slate-50 dark:bg-slate-800 border hairline-border px-4 py-3 text-xs font-bold focus:outline-none focus:border-accent transition-all dark:text-white rounded-none resize-none"
+                    ></textarea>
                   </div>
                 </div>
 

@@ -119,9 +119,9 @@ const PostDetail: React.FC = () => {
             <div className="flex flex-col md:flex-row items-center gap-10">
               <div className="flex-1">
                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-4 block">Free Resource</span>
-                <h4 className="text-2xl font-black text-secondary dark:text-white mb-4 uppercase tracking-tight">The 2025 Agribusiness GTM Playbook.</h4>
+                <h4 className="text-2xl font-black text-secondary dark:text-white mb-4 uppercase tracking-tight">The Cracking FA Code.</h4>
                 <p className="text-xs text-slate-500 dark:text-slate-400 leading-loose font-medium mb-6">
-                  A 40-page tactical guide on bridging the gap between technical agronomy and commercial velocity. Used by 500+ Regional Managers.
+                  Ubah FA Dari “Orang Lapangan” Menjadi Strategic Adoption Driver. Ebook ini adalah peta jalan menuju FA yang lebih efektif, terukur, dan dihargai.
                 </p>
                 <Link to="/playbook" className="bg-secondary text-white px-8 py-3 text-[10px] font-black uppercase tracking-[0.25em] hover:bg-accent transition-all shadow-md rounded-none inline-block">
                   Download PDF

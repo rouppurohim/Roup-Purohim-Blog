@@ -17,14 +17,13 @@ const Playbook: React.FC = () => {
                 <div className="max-w-[1000px] mx-auto px-6 text-center">
                     <span className="text-metadata text-accent mb-6 block">Strategic Knowledge Transfer</span>
                     <h1 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-[0.95] text-secondary dark:text-white mb-12">
-                        The 2025 <br />
-                        Agribusiness <br />
-                        <span className="text-primary italic dark:text-accent">GTM Playbook.</span>
+                        The Cracking FA Code <br />
+                        <span className="text-primary italic dark:text-accent">Dari Sepatu Boot ke Mesin Adopsi.</span>
                     </h1>
                     <p className="text-sm md:text-base font-medium text-slate-500 max-w-2xl mx-auto leading-relaxed uppercase tracking-wider">
-                        Bridging the gap between technical agronomy and commercial velocity.
+                        Ubah FA Dari “Orang Lapangan” Menjadi Strategic Adoption Driver.
                         <br className="hidden md:block" />
-                        A tactical guide for Regional Managers.
+                        Ebook ini adalah peta jalan menuju FA yang lebih efektif, terukur, dan dihargai.
                     </p>
                 </div>
             </header>
@@ -39,13 +38,16 @@ const Playbook: React.FC = () => {
                         </div>
 
                         <div>
-                            <h3 className="text-2xl font-black text-secondary dark:text-white mb-10 uppercase tracking-tight">Inside The Audit</h3>
+                            <h3 className="text-2xl font-black text-secondary dark:text-white mb-10 uppercase tracking-tight">Dapatkan Insight Setelah Membaca Ebook Ini:</h3>
                             <div className="grid grid-cols-1 gap-8">
                                 {[
-                                    { title: "The Velocity Gap", desc: "Why superior products fail to gain traction in fragmented markets." },
-                                    { title: "The 'Doctor' Framework", desc: "Transforming agronomists from salespeople into diagnostic authorities." },
-                                    { title: "Retailer Psychology", desc: "How to shift kiosk owners from passive stockists to active partners." },
-                                    { title: "Tank-Mix Math", desc: "Commercial calculations that justify premium pricing to skeptical farmers." }
+                                    { title: "Framework FA Teruji", desc: "Framework kerja FA yang teruji di lapangan untuk hasil maksimal." },
+                                    { title: "Ukur Kinerja FA", desc: "Cara mengukur kinerja FA menggunakan leading indicator yang akurat." },
+                                    { title: "Hidupkan Pipeline", desc: "Cara menghidupkan kembali pipeline dari petani → kios → distributor." },
+                                    { title: "Teknik Follow-up SHARE", desc: "Teknik follow-up yang membuat trial berubah menjadi repeat order." },
+                                    { title: "Relationship Capital", desc: "Cara membangun hubungan yang tidak bisa dibeli dengan iklan." },
+                                    { title: "Insight Real 20 Tahun", desc: "Pengalaman 20 tahun penulis di industri agro-input." },
+                                    { title: "Mindset Baru FA", desc: "Transformasi dari executor menjadi strategic adoption driver." }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-6 border-b hairline-border pb-8 last:border-0">
                                         <span className="text-lg font-black text-accent">0{i + 1}</span>
@@ -65,7 +67,7 @@ const Playbook: React.FC = () => {
                             <div className="absolute top-0 right-0 w-24 h-24 bg-accent -rotate-45 translate-x-12 -translate-y-12"></div>
 
                             <h3 className="text-xl font-black text-secondary dark:text-white mb-2 uppercase tracking-widest">Instant Access</h3>
-                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-12">PDF Download • 42 Pages</p>
+                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-12">PDF Download</p>
 
                             <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
                                 <div>
@@ -77,10 +79,10 @@ const Playbook: React.FC = () => {
                                     <input type="email" className="w-full bg-slate-50 dark:bg-slate-800 border hairline-border px-4 py-4 text-xs font-bold focus:outline-none focus:border-accent transition-all dark:text-white rounded-none" placeholder="NAME@COMPANY.COM" />
                                 </div>
 
-                                <button type="submit" className="w-full bg-secondary text-white py-6 text-[11px] font-black uppercase tracking-[0.3em] hover:bg-accent transition-all shadow-lg rounded-none group relative overflow-hidden">
+                                <a href="https://s.id/dxzVJ" target="_blank" rel="noopener noreferrer" className="block w-full bg-secondary text-white py-6 text-[11px] font-black uppercase tracking-[0.3em] hover:bg-accent transition-all shadow-lg rounded-none group relative overflow-hidden text-center">
                                     <span className="relative z-10">Send Me The Playbook</span>
                                     <div className="absolute inset-0 bg-accent transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                                </button>
+                                </a>
 
                                 <p className="text-center text-[8px] text-slate-300 font-bold uppercase tracking-widest mt-6">
                                     Join 1,240+ Agribusiness Leaders

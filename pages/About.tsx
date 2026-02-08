@@ -10,7 +10,7 @@ const About: React.FC = () => {
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-7">
-              <span className="text-metadata text-accent mb-6 block">The Commercial Agronomist Profile</span>
+              <span className="text-metadata text-accent mb-6 block">The Crackership Strategist Profile</span>
               <h1 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-[0.95] text-secondary dark:text-white mb-12">
                 Demand <br />
                 Creation <br />
@@ -25,6 +25,9 @@ const About: React.FC = () => {
                 </p>
                 <p>
                   Through the <strong className="text-secondary dark:text-white not-italic">Crackership Framework</strong>, I help companies bridge the massive gap between field technicality and boardroom precision.
+                </p>
+                <p className="font-bold text-secondary dark:text-white not-italic text-left pt-6">
+                  - Roup Purohim
                 </p>
               </div>
             </div>

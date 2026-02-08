@@ -15,8 +15,8 @@ export const AUTHOR: import('./types').Author = {
   avatar_url: "/roup.png",
   social: {
     linkedin: "https://linkedin.com/in/rouppurohim",
-    twitter: "https://twitter.com/rouppurohim",
-    email: "mailto:contact@rouppurohim.com"
+    instagram: "https://instagram.com/nutaniman",
+    email: "mailto:roup.purohim@gmail.com"
   }
 };
 
@@ -168,8 +168,8 @@ export const MOCK_RESOURCES: Resource[] = [
   // LITERATURE
   {
     id: 1,
-    title: "The Crackership Strategy: Mastering Agribusiness GTM",
-    description: "The definitive guide to bridging the gap between technical agronomy and commercial execution. Includes 50+ case studies from SEA markets.",
+    title: "Crackership Agronomist - Dari Petugas Lapang ke Membangun Legacy",
+    description: "Ditulis berdasarkan gabungan antara ilmu manajemen stratejik, pengalaman dua dekade di industri agrokimia, dan realita lapangan yang dialami para agronomist setiap hari. Buku ini akan menemanimu melalui: Bagaimana membentuk mindset pemenang, model kapabilitas agronomist, konsep Crackership untuk membangun legacy, dan panduan membangun identitas strategis.",
     type: "Book",
     category: "Literature",
     link: "#",
@@ -188,18 +188,18 @@ export const MOCK_RESOURCES: Resource[] = [
   // TECHNOLOGY
   {
     id: 3,
-    title: "AgroDemand Predictor v2.0",
-    description: "SaaS platform forecasting regional product demand shifts based on micro-climate data and pest outbreak patterns.",
+    title: "Crackership One",
+    description: "AI-powered platform for agronomists and agro-input professionals. Features crop diagnosis, pesticide product knowledge, AI consultation, sales enablement, and farmer meeting modules.",
     type: "SaaS",
     category: "Technology",
-    link: "#",
+    link: "https://one.crackership.club/",
     image_url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600"
   },
   {
     id: 4,
-    title: "FieldAudit AI",
-    description: "Custom GPT agent designed to analyze field technician reports and score them against the Crackership commercial standards.",
-    type: "CustomGPT",
+    title: "Crackership Mentor",
+    description: "AI-Powered Career Platform transforming everyday agronomists into strategists. Features career self-assessment, 24/7 AI mentoring, capability mapping, and personal branding tools.",
+    type: "Career Platform",
     category: "Technology",
     link: "#",
     image_url: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=600"

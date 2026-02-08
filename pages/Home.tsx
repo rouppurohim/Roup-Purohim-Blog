@@ -10,8 +10,8 @@ const Home: React.FC = () => {
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-9">
-              <span className="text-metadata text-accent mb-6 block">The Crackership Framework: 3C Models Agronomist Capabilities</span>
-              <h1 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-[0.95] text-secondary dark:text-white mb-12">
+              <span className="text-metadata text-accent mb-6 block">From Field Trials to Market Dominance</span>
+              <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-[0.95] text-secondary dark:text-white mb-12">
                 Accelerating <br />
                 Agrochemical <br />
                 <span className="text-primary italic dark:text-accent">Velocity.</span>
@@ -24,7 +24,7 @@ const Home: React.FC = () => {
                   Get Playbook Free
                 </Link>
                 <div className="h-12 w-px bg-slate-200 dark:bg-slate-800 hidden md:block"></div>
-                <p className="max-w-xs text-xs font-bold text-slate-500 leading-loose uppercase tracking-wider">
+                <p className="max-w-xs text-xs font-bold text-slate-600 leading-loose uppercase tracking-wider">
                   Roup Purohim: Bridging technical demo validation with high-performance retail distribution networks.
                 </p>
               </div>
@@ -36,11 +36,11 @@ const Home: React.FC = () => {
                 <div className="text-xs font-black text-secondary dark:text-white mb-6 uppercase tracking-widest border-b hairline-border pb-4">Performance Index</div>
                 <div className="space-y-6">
                   <div className="flex flex-col gap-1">
-                    <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">Demand Creation Score</span>
+                    <span className="text-[9px] font-black uppercase tracking-widest text-slate-500">Demand Creation Score</span>
                     <span className="text-3xl font-black text-accent tracking-tighter">Top 1%</span>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">Retailer Trust Index</span>
+                    <span className="text-[9px] font-black uppercase tracking-widest text-slate-500">Retailer Trust Index</span>
                     <span className="text-3xl font-black text-secondary dark:text-white tracking-tighter">94.8%</span>
                   </div>
                 </div>
@@ -61,9 +61,34 @@ const Home: React.FC = () => {
               { title: "Sales Force Mastery", desc: "Training agronomists to transcend technical specs and master demand creation." }
             ].map((p, i) => (
               <div key={i} className="p-12 group hover:bg-primary transition-all duration-500 rounded-none">
-                <span className="text-metadata text-slate-300 mb-8 block group-hover:text-white/30">CAPABILITY 0{i + 1}</span>
+                <span className="text-metadata text-slate-500 mb-8 block group-hover:text-white/30">CAPABILITY 0{i + 1}</span>
                 <h3 className="text-lg font-black text-secondary dark:text-white mb-4 uppercase tracking-tighter group-hover:text-white">{p.title}</h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 group-hover:text-white/70 leading-relaxed font-sans">{p.desc}</p>
+                <p className="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/70 leading-relaxed font-sans">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION: RESULTS - MOVED UP FOR AUTHORITY */}
+      <section className="py-32 bg-secondary text-white relative overflow-hidden rounded-none">
+        <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+          <div className="mb-24 flex flex-col md:flex-row justify-between items-end gap-12">
+            <div className="max-w-2xl">
+              <span className="text-metadata text-accent mb-6 block">Channel Execution Proof</span>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none">Moving <br /><span className="italic text-accent">Markets.</span></h2>
+            </div>
+            <p className="text-slate-400 text-xs font-medium uppercase tracking-widest max-w-xs leading-loose">
+              Validated metrics from 20+ years of regional GTM management.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border hairline-border-white divide-x divide-white/10">
+            {MOCK_RESULTS.map((case_, i) => (
+              <div key={i} className="p-16 group hover:bg-white hover:text-secondary transition-all duration-500 rounded-none">
+                <div className="text-7xl font-black text-accent mb-10 tracking-tighter group-hover:scale-110 transition-transform origin-left">{case_.metric}</div>
+                <div className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4 group-hover:text-secondary">{case_.label}</div>
+                <h4 className="text-lg font-black uppercase tracking-tighter mb-6">{case_.project}</h4>
+                <p className="text-xs text-slate-400 font-medium leading-loose group-hover:text-slate-600">{case_.desc}</p>
               </div>
             ))}
           </div>
@@ -76,7 +101,7 @@ const Home: React.FC = () => {
           <div className="flex justify-between items-end mb-20 border-b hairline-border pb-12">
             <div>
               <span className="text-metadata text-accent mb-4 block">Latest Strategic Intelligence</span>
-              <h2 className="text-5xl font-black text-secondary dark:text-white tracking-tighter uppercase">Insights</h2>
+              <h2 className="text-4xl md:text-6xl font-black text-secondary dark:text-white tracking-tighter uppercase">Insights</h2>
             </div>
             <Link to="/insights" className="text-metadata hover:text-accent transition-colors border-b-2 border-accent pb-1">View Full Archive &rarr;</Link>
           </div>
@@ -101,10 +126,10 @@ const Home: React.FC = () => {
 
             {/* SECONDARY LIST - COMPACT */}
             <div className="lg:col-span-4 space-y-12">
-              <h4 className="text-metadata text-slate-300 mb-8 block border-b hairline-border pb-4">Recent Insights</h4>
+              <h4 className="text-metadata text-slate-500 mb-8 block border-b hairline-border pb-4">Recent Insights</h4>
               {MOCK_POSTS.slice(1, 4).map(post => (
                 <Link to={`/${post.slug}`} key={post.id} className="group flex gap-6 items-start border-b hairline-border pb-8 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors p-4 -mx-4 rounded-none">
-                  <span className="text-metadata text-slate-200 pt-1 font-black italic">/0{post.id}</span>
+                  <span className="text-metadata text-slate-400 pt-1 font-black italic">/0{post.id}</span>
                   <div>
                     <span className="text-[9px] font-black uppercase text-accent tracking-widest mb-2 block">{post.category}</span>
                     <h4 className="text-lg font-black text-secondary dark:text-white group-hover:text-accent transition-colors leading-tight tracking-tighter uppercase mb-2">{post.title}</h4>
@@ -117,37 +142,29 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION: RESULTS - DYNAMIC DATA */}
-      <section className="py-32 bg-secondary text-white relative overflow-hidden rounded-none">
+      {/* SECTION: FINAL CTA - THE CLOSER */}
+      <section className="py-32 bg-secondary text-white text-center relative overflow-hidden rounded-none border-t border-white/10">
         <div className="max-w-[1400px] mx-auto px-6 relative z-10">
-          <div className="mb-24 flex flex-col md:flex-row justify-between items-end gap-12">
-            <div className="max-w-2xl">
-              <span className="text-metadata text-accent mb-6 block">Channel Execution Proof</span>
-              <h2 className="text-6xl font-black tracking-tighter uppercase leading-none">Moving <br /><span className="italic text-accent">Markets.</span></h2>
-            </div>
-            <p className="text-slate-400 text-xs font-medium uppercase tracking-widest max-w-xs leading-loose">
-              Validated metrics from 20+ years of regional GTM management.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border hairline-border-white divide-x divide-white/10">
-            {MOCK_RESULTS.map((case_, i) => (
-              <div key={i} className="p-16 group hover:bg-white hover:text-secondary transition-all duration-500 rounded-none">
-                <div className="text-7xl font-black text-accent mb-10 tracking-tighter group-hover:scale-110 transition-transform origin-left">{case_.metric}</div>
-                <div className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4 group-hover:text-secondary">{case_.label}</div>
-                <h4 className="text-lg font-black uppercase tracking-tighter mb-6">{case_.project}</h4>
-                <p className="text-xs text-slate-400 font-medium leading-loose group-hover:text-slate-600">{case_.desc}</p>
-              </div>
-            ))}
-          </div>
+          <span className="text-metadata text-accent mb-6 block">Ready to Scale?</span>
+          <h2 className="text-5xl md:text-7xl font-black mb-16 tracking-tighter uppercase leading-none">
+            Audit Your <br />
+            <span className="italic text-slate-400">Field Force.</span>
+          </h2>
+          <Link to="/work-with-me" className="inline-block bg-accent text-white px-24 py-8 text-[12px] font-black uppercase tracking-[0.4em] hover:bg-white hover:text-primary transition-all rounded-none shadow-2xl hover:shadow-accent/20">
+            Start Strategy Session &rarr;
+          </Link>
         </div>
       </section>
+
+      {/* SECTION: RESULTS - DYNAMIC DATA */}
+
 
       {/* SECTION: SOCIAL PROOF - SLEEK CARDS */}
       <section className="py-32 border-b hairline-border bg-white dark:bg-slate-900/50">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="mb-20">
             <span className="text-metadata text-accent mb-4 block">Industry Recognition</span>
-            <h2 className="text-5xl font-black text-secondary dark:text-white tracking-tighter uppercase">Trusted By <br /> <span className="text-primary dark:text-accent italic">Leaders.</span></h2>
+            <h2 className="text-4xl md:text-6xl font-black text-secondary dark:text-white tracking-tighter uppercase">Trusted By <br /> <span className="text-primary dark:text-accent italic">Leaders.</span></h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {MOCK_TESTIMONIALS.map((testimonial) => (

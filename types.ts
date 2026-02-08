@@ -26,7 +26,7 @@ export interface Resource {
   id: number;
   title: string;
   description: string;
-  type: 'Book' | 'Ebook' | 'SaaS' | 'CustomGPT' | 'Training';
+  type: 'Book' | 'Ebook' | 'SaaS' | 'CustomGPT' | 'Training' | 'Career Platform';
   category: 'Literature' | 'Technology' | 'Education';
   link: string;
   image_url: string;
@@ -52,7 +52,7 @@ export interface Author {
   avatar_url: string;
   social: {
     linkedin?: string;
-    twitter?: string;
+    instagram?: string;
     whatsapp?: string;
     email?: string;
   };

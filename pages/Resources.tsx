@@ -44,7 +44,7 @@ const Resources: React.FC = () => {
                     <h4 className="text-xl font-black text-secondary dark:text-white mb-4 leading-tight uppercase tracking-tight">{res.title}</h4>
                     <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed mb-8 font-serif italic line-clamp-3">{res.description}</p>
                   </div>
-                  <a href={res.link} className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary dark:text-white border-b border-secondary dark:border-white pb-1 hover:text-accent hover:border-accent transition-all">
+                  <a href={res.link} target="_blank" rel="noopener noreferrer" className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary dark:text-white border-b border-secondary dark:border-white pb-1 hover:text-accent hover:border-accent transition-all">
                     Get Copy &rarr;
                   </a>
                 </div>
@@ -73,7 +73,7 @@ const Resources: React.FC = () => {
                 </div>
                 <h4 className="text-2xl font-black text-secondary dark:text-white mb-4 uppercase tracking-tighter group-hover:text-accent transition-colors">{res.title}</h4>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-sans mb-10">{res.description}</p>
-                <a href={res.link} className="inline-block bg-secondary text-white px-8 py-4 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-accent transition-all rounded-none">
+                <a href={res.link} target="_blank" rel="noopener noreferrer" className="inline-block bg-secondary text-white px-8 py-4 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-accent transition-all rounded-none">
                   Launch Tool
                 </a>
               </div>
@@ -104,7 +104,7 @@ const Resources: React.FC = () => {
                   </div>
                   <h3 className="text-3xl font-black text-secondary dark:text-white mb-4 uppercase tracking-tighter">{res.title}</h3>
                   <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-8 max-w-2xl">{res.description}</p>
-                  <a href={res.link} className="text-metadata font-black hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent pb-1">
+                  <a href={res.link} target="_blank" rel="noopener noreferrer" className="text-metadata font-black hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent pb-1">
                     View Curriculum &rarr;
                   </a>
                 </div>
