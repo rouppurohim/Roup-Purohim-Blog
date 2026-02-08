@@ -13,8 +13,8 @@
     "framer-motion": "^12.33.0",
     "hono": "^4.11.8",
     "marked": "^17.0.1",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-helmet-async": "^2.0.5",
     "react-router": "^7.13.0",
     "react-router-dom": "^7.13.0"
