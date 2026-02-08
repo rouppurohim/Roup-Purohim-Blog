@@ -1,6 +1,6 @@
 import { HelmetProvider } from 'react-helmet-async';
 import React, { Suspense, lazy } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router';
+import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import { AppProvider } from './context/AppContext';
 import Layout from './components/Layout';
 
