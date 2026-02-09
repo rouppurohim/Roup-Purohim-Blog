@@ -69,7 +69,7 @@ Klik **Save and Deploy**.
 
 ## Tahap 5: Custom Domain (Opsional)
 
-Jika Anda sudah punya domain sendiri (misal: `rouppurohim.com`):
+Jika Anda sudah punya domain sendiri (misal: `roup.me`):
 
 1.  Buka tab **Custom domains** di dashboard project Pages Anda.
 2.  Klik **Set up a custom domain**.
