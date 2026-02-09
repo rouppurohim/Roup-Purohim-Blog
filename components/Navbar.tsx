@@ -61,9 +61,9 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-x-0 top-20 bg-white dark:bg-slate-900 z-[60] flex flex-col justify-start p-8 lg:hidden border-t hairline-border shadow-xl">
+        <div className="fixed inset-x-0 top-20 bg-white dark:bg-slate-900 z-[60] flex flex-col justify-start p-6 lg:hidden border-t hairline-border shadow-xl">
           {/* Navigation Links */}
-          <div className="flex flex-col space-y-0 mb-6">
+          <div className="flex flex-col space-y-0 mb-4">
             {navLinks.map((link, index) => (
               <Link
                 key={link.path}
