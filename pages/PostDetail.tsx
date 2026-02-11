@@ -9,7 +9,36 @@ import Giscus from '../components/Giscus';
 const PostDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t } = useApp();
-  const post = MOCK_POSTS.find(p => p.slug === slug);
+  const [post, setPost] = React.useState<any>(null);
+  const [loading, setLoading] = React.useState(true);
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        setLoading(true);
+        // Try fetching from API first
+        const response = await fetch(`/api/posts/${slug}`);
+        const data: { success: boolean; data: any } = await response.json();
+
+        if (data.success && data.data) {
+          setPost(data.data);
+        } else {
+          // Fallback to MOCK_POSTS
+          const mockPost = MOCK_POSTS.find(p => p.slug === slug);
+          setPost(mockPost || null);
+        }
+      } catch (error) {
+        console.error("Failed to fetch post:", error);
+        // Fallback to MOCK_POSTS on error
+        const mockPost = MOCK_POSTS.find(p => p.slug === slug);
+        setPost(mockPost || null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPost();
+  }, [slug]);
 
   useEffect(() => {
     if (post) window.scrollTo(0, 0);
@@ -25,6 +54,7 @@ const PostDetail: React.FC = () => {
     return MOCK_POSTS.filter(p => p.id !== post.id && p.category === post.category).slice(0, 2);
   }, [post]);
 
+  if (loading) return <div className="py-40 text-center font-black uppercase text-metadata animate-pulse">Loading Analysis...</div>;
   if (!post) return <div className="py-40 text-center font-black uppercase text-metadata">Analysis Not Found.</div>;
 
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
@@ -40,7 +70,7 @@ const PostDetail: React.FC = () => {
         focusKeyword={post.seo?.focus_keyword}
         jsonLd={post.seo?.json_ld}
       />
-      <header className="pt-20 md:pt-32 pb-12 md:pb-20 border-b hairline-border bg-white dark:bg-slate-900">
+      <header className="pt-20 pb-8 md:pb-10 border-b hairline-border bg-white dark:bg-slate-900">
         <div className="max-w-[720px] mx-auto px-4 md:px-6">
           <nav className="mb-12 flex items-center gap-4 text-metadata text-slate-400">
             <Link to="/insights" className="hover:text-accent transition-colors">Archive</Link>
@@ -83,7 +113,7 @@ const PostDetail: React.FC = () => {
         </div>
       </header>
 
-      <div className="max-w-[720px] mx-auto px-4 md:px-6 py-8 md:py-16">
+      <div className="max-w-[720px] mx-auto px-4 md:px-6 py-8 md:py-8">
         <main>
           <div className="mb-10 grayscale hover:grayscale-0 transition-all duration-1000 border hairline-border shadow-sm rounded-none overflow-hidden bg-slate-100 dark:bg-slate-800">
             <img src={post.featured_image_url} className="w-full aspect-[21/9] object-cover" alt={post.title} loading="lazy" />
@@ -159,7 +189,7 @@ const PostDetail: React.FC = () => {
             </div>
           )}
 
-          <div className="mt-12 p-6 md:p-8 border hairline-border bg-white dark:bg-slate-900 rounded-none shadow-sm hover:shadow-md transition-shadow duration-500">
+          <div className="mt-12 p-6 md:p-6 border hairline-border bg-white dark:bg-slate-900 rounded-none shadow-sm hover:shadow-md transition-shadow duration-500">
             <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
               <img src={AUTHOR.avatar_url} alt={AUTHOR.name} className="w-20 h-20 object-cover border border-white dark:border-slate-800 shrink-0 filter grayscale hover:grayscale-0 transition-all duration-500 rounded-none shadow-sm" />
               <div>
@@ -195,7 +225,7 @@ const PostDetail: React.FC = () => {
 
           {/* Giscus Comments */}
           {/* DISCUSSION CTA: LINKEDIN */}
-          <div className="mt-20 p-8 md:p-12 bg-white dark:bg-slate-900 border hairline-border shadow-sm flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <div className="mt-16 p-8 md:p-8 bg-white dark:bg-slate-900 border hairline-border shadow-sm flex flex-col md:flex-row items-center gap-8 md:gap-10">
             <div className="w-16 h-16 bg-[#0077b5] text-white flex items-center justify-center text-3xl rounded-none shadow-lg shrink-0">
               in
             </div>

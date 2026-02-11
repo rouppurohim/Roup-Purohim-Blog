@@ -13,7 +13,7 @@ const Playbook: React.FC = () => {
                 keywords="Agribusiness Playbook, GTM Strategy, Commercial Velocity, Roup Purohim"
             />
 
-            <header className="pt-32 pb-20 border-b hairline-border bg-white dark:bg-slate-900">
+            <header className="pt-20 pb-10 border-b hairline-border bg-white dark:bg-slate-900">
                 <div className="max-w-[1000px] mx-auto px-6 text-center">
                     <span className="text-metadata text-accent mb-6 block">Strategic Knowledge Transfer</span>
                     <h1 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-[0.95] text-secondary dark:text-white mb-12">
@@ -28,11 +28,11 @@ const Playbook: React.FC = () => {
                 </div>
             </header>
 
-            <div className="max-w-[1200px] mx-auto px-6 py-24">
+            <div className="max-w-[1200px] mx-auto px-6 py-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
 
                     {/* LEFT: CONTENT / VALUE PROPS */}
-                    <div className="lg:col-span-7 space-y-20">
+                    <div className="lg:col-span-7 space-y-12">
                         <div className="border hairline-border bg-white dark:bg-slate-900 rounded-none shadow-sm relative overflow-hidden group aspect-[3/4] max-w-md mx-auto lg:mx-0">
                             <img src="/ebook-cover.png" alt="Playbook Cover" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                         </div>
@@ -63,7 +63,7 @@ const Playbook: React.FC = () => {
 
                     {/* RIGHT: DOWNLOAD FORM */}
                     <div className="lg:col-span-5 sticky top-32">
-                        <div className="bg-white dark:bg-slate-900 border hairline-border p-12 rounded-none shadow-2xl relative overflow-hidden">
+                        <div className="bg-white dark:bg-slate-900 border hairline-border p-8 rounded-none shadow-2xl relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-24 h-24 bg-accent -rotate-45 translate-x-12 -translate-y-12"></div>
 
                             <h3 className="text-xl font-black text-secondary dark:text-white mb-2 uppercase tracking-widest">Instant Access</h3>

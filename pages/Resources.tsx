@@ -9,7 +9,7 @@ const Resources: React.FC = () => {
 
   return (
     <div className="bg-background dark:bg-darkbg min-h-screen">
-      <header className="pt-32 pb-20 border-b hairline-border bg-white dark:bg-slate-900">
+      <header className="pt-20 pb-10 border-b hairline-border bg-white dark:bg-slate-900">
         <div className="max-w-[1400px] mx-auto px-6">
           <span className="text-metadata text-accent mb-6 block">Strategic Resources</span>
           <h1 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-[0.95] text-secondary dark:text-white mb-12">
@@ -24,7 +24,7 @@ const Resources: React.FC = () => {
       </header>
 
       {/* SECTION 01: LITERATURE (Books & Ebooks) */}
-      <section className="py-24 border-b hairline-border">
+      <section className="py-10 border-b hairline-border">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="mb-16 flex items-baseline gap-8">
             <h2 className="text-4xl font-black text-secondary dark:text-white tracking-tighter uppercase">01. Literature</h2>
@@ -33,7 +33,7 @@ const Resources: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {literature.map(res => (
-              <div key={res.id} className="group flex flex-col md:flex-row gap-10 bg-white dark:bg-slate-900 border hairline-border p-10 hover:shadow-lg transition-all duration-500 rounded-none relative overflow-hidden">
+              <div key={res.id} className="group flex flex-col md:flex-row gap-10 bg-white dark:bg-slate-900 border hairline-border p-6 hover:shadow-lg transition-all duration-500 rounded-none relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-2 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="w-32 aspect-[3/4] bg-slate-100 dark:bg-slate-800 shrink-0 shadow-md">
                   <img src={res.image_url} alt={res.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" loading="lazy" />
@@ -55,7 +55,7 @@ const Resources: React.FC = () => {
       </section>
 
       {/* SECTION 02: TECHNOLOGY (SaaS & AI) */}
-      <section className="py-24 border-b hairline-border bg-slate-50 dark:bg-slate-900/50">
+      <section className="py-10 border-b hairline-border bg-slate-50 dark:bg-slate-900/50">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="mb-16 flex items-baseline gap-8">
             <h2 className="text-4xl font-black text-secondary dark:text-white tracking-tighter uppercase">02. Technology</h2>
@@ -64,7 +64,7 @@ const Resources: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {technology.map(res => (
-              <div key={res.id} className="group p-10 bg-white dark:bg-slate-900 border hairline-border hover:border-accent transition-all duration-500 rounded-none">
+              <div key={res.id} className="group p-6 bg-white dark:bg-slate-900 border hairline-border hover:border-accent transition-all duration-500 rounded-none">
                 <div className="flex justify-between items-start mb-8">
                   <span className="w-12 h-12 flex items-center justify-center bg-secondary text-white text-lg font-black rounded-none">
                     {res.type === 'SaaS' ? 'S' : 'AI'}
@@ -83,7 +83,7 @@ const Resources: React.FC = () => {
       </section>
 
       {/* SECTION 03: ACADEMY (Training) */}
-      <section className="py-24">
+      <section className="py-10">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="mb-16 flex items-baseline gap-8">
             <h2 className="text-4xl font-black text-secondary dark:text-white tracking-tighter uppercase">03. Academy</h2>
@@ -92,7 +92,7 @@ const Resources: React.FC = () => {
           </div>
           <div className="border border-l-4 border-l-accent hairline-border bg-white dark:bg-slate-900 p-0 rounded-none overflow-hidden">
             {education.map((res, idx) => (
-              <div key={res.id} className={`p-12 flex flex-col md:flex-row gap-12 items-center hover:bg-slate-50 dark:hover:bg-slate-800 transition-all ${idx !== education.length - 1 ? 'border-b hairline-border' : ''}`}>
+              <div key={res.id} className={`p-8 flex flex-col md:flex-row gap-12 items-center hover:bg-slate-50 dark:hover:bg-slate-800 transition-all ${idx !== education.length - 1 ? 'border-b hairline-border' : ''}`}>
                 <div className="w-full md:w-1/3 aspect-video bg-slate-200 dark:bg-slate-800 grayscale hover:grayscale-0 transition-all duration-500 overflow-hidden relative group">
                   <img src={res.image_url} alt={res.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" loading="lazy" />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all"></div>

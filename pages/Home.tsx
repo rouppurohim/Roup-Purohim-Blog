@@ -6,7 +6,7 @@ const Home: React.FC = () => {
   return (
     <div className="bg-background dark:bg-darkbg min-h-screen">
       {/* SECTION: HERO - SHARP ARCHITECTURE */}
-      <section className="pt-32 pb-24 border-b hairline-border bg-white dark:bg-slate-900">
+      <section className="pt-20 pb-10 border-b hairline-border bg-white dark:bg-slate-900">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-9">
@@ -32,7 +32,7 @@ const Home: React.FC = () => {
 
             {/* HERO PERFORMANCE CARD - SLEEK REFACTOR */}
             <div className="lg:col-span-3 flex flex-col justify-end">
-              <div className="p-10 border hairline-border bg-white dark:bg-slate-900 rounded-none shadow-sm relative overflow-hidden group hover:border-accent transition-colors">
+              <div className="p-6 border hairline-border bg-white dark:bg-slate-900 rounded-none shadow-sm relative overflow-hidden group hover:border-accent transition-colors">
                 <div className="text-xs font-black text-secondary dark:text-white mb-6 uppercase tracking-widest border-b hairline-border pb-4">Performance Index</div>
                 <div className="space-y-6">
                   <div className="flex flex-col gap-1">
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* SECTION: PILLARS - SHARP HAIRLINE GRID */}
-      <section className="py-24 border-b hairline-border bg-slate-50 dark:bg-slate-900/50">
+      <section className="py-10 border-b hairline-border bg-slate-50 dark:bg-slate-900/50">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-0 divide-x dark:divide-slate-800 border hairline-border rounded-none overflow-hidden bg-white dark:bg-slate-900">
             {[
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
               { title: "GTM Architecture", desc: "Deploying novel formulations (WP to WG) through strategic channel placement." },
               { title: "Sales Force Mastery", desc: "Training agronomists to transcend technical specs and master demand creation." }
             ].map((p, i) => (
-              <div key={i} className="p-12 group hover:bg-primary transition-all duration-500 rounded-none">
+              <div key={i} className="p-6 group hover:bg-primary transition-all duration-500 rounded-none">
                 <span className="text-metadata text-slate-500 mb-8 block group-hover:text-white/30">CAPABILITY 0{i + 1}</span>
                 <h3 className="text-lg font-black text-secondary dark:text-white mb-4 uppercase tracking-tighter group-hover:text-white">{p.title}</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/70 leading-relaxed font-sans">{p.desc}</p>
@@ -71,7 +71,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* SECTION: RESULTS - MOVED UP FOR AUTHORITY */}
-      <section className="py-32 bg-secondary text-white relative overflow-hidden rounded-none">
+      <section className="py-12 bg-secondary text-white relative overflow-hidden rounded-none">
         <div className="max-w-[1400px] mx-auto px-6 relative z-10">
           <div className="mb-24 flex flex-col md:flex-row justify-between items-end gap-12">
             <div className="max-w-2xl">
@@ -84,7 +84,7 @@ const Home: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border hairline-border-white divide-x divide-white/10">
             {MOCK_RESULTS.map((case_, i) => (
-              <div key={i} className="p-16 group hover:bg-white hover:text-secondary transition-all duration-500 rounded-none">
+              <div key={i} className="p-8 group hover:bg-white hover:text-secondary transition-all duration-500 rounded-none">
                 <div className="text-7xl font-black text-accent mb-10 tracking-tighter group-hover:scale-110 transition-transform origin-left">{case_.metric}</div>
                 <div className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4 group-hover:text-secondary">{case_.label}</div>
                 <h4 className="text-lg font-black uppercase tracking-tighter mb-6">{case_.project}</h4>
@@ -96,7 +96,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* SECTION: INTELLIGENCE - COMPACT BLOG LIST */}
-      <section className="py-32">
+      <section className="py-10">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="flex justify-between items-end mb-20 border-b hairline-border pb-12">
             <div>
@@ -125,10 +125,10 @@ const Home: React.FC = () => {
             </div>
 
             {/* SECONDARY LIST - COMPACT */}
-            <div className="lg:col-span-4 space-y-12">
-              <h4 className="text-metadata text-slate-500 mb-8 block border-b hairline-border pb-4">Recent Insights</h4>
+            <div className="lg:col-span-4 space-y-6">
+              <h4 className="text-metadata text-slate-500 mb-6 block border-b hairline-border pb-3">Recent Insights</h4>
               {MOCK_POSTS.slice(1, 4).map(post => (
-                <Link to={`/${post.slug}`} key={post.id} className="group flex gap-6 items-start border-b hairline-border pb-8 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors p-4 -mx-4 rounded-none">
+                <Link to={`/${post.slug}`} key={post.id} className="group flex gap-6 items-start border-b hairline-border pb-5 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors p-3 -mx-3 rounded-none">
                   <span className="text-metadata text-slate-400 pt-1 font-black italic">/0{post.id}</span>
                   <div>
                     <span className="text-[9px] font-black uppercase text-accent tracking-widest mb-2 block">{post.category}</span>
@@ -143,7 +143,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* SECTION: FINAL CTA - THE CLOSER */}
-      <section className="py-32 bg-secondary text-white text-center relative overflow-hidden rounded-none border-t border-white/10">
+      <section className="py-12 bg-secondary text-white text-center relative overflow-hidden rounded-none border-t border-white/10">
         <div className="max-w-[1400px] mx-auto px-6 relative z-10">
           <span className="text-metadata text-accent mb-6 block">Ready to Scale?</span>
           <h2 className="text-5xl md:text-7xl font-black mb-16 tracking-tighter uppercase leading-none">
@@ -160,7 +160,7 @@ const Home: React.FC = () => {
 
 
       {/* SECTION: SOCIAL PROOF - SLEEK CARDS */}
-      <section className="py-32 border-b hairline-border bg-white dark:bg-slate-900/50">
+      <section className="py-10 border-b hairline-border bg-white dark:bg-slate-900/50">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="mb-20">
             <span className="text-metadata text-accent mb-4 block">Industry Recognition</span>
@@ -168,7 +168,7 @@ const Home: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {MOCK_TESTIMONIALS.map((testimonial) => (
-              <div key={testimonial.id} className="p-12 border hairline-border bg-white dark:bg-slate-900 rounded-none relative hover:shadow-lg transition-all duration-500 group">
+              <div key={testimonial.id} className="p-6 border hairline-border bg-white dark:bg-slate-900 rounded-none relative hover:shadow-lg transition-all duration-500 group">
                 <div className="absolute top-10 right-10 text-6xl text-slate-100 dark:text-slate-800 font-serif italic group-hover:text-accent/20 transition-colors">"</div>
                 <p className="text-lg font-serif italic text-slate-600 dark:text-slate-300 leading-loose mb-10 relative z-10">
                   {testimonial.quote}

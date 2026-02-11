@@ -14,7 +14,7 @@ const WorkWithMe: React.FC = () => {
 
   return (
     <div className="bg-background dark:bg-darkbg min-h-screen">
-      <header className="pt-32 pb-20 border-b hairline-border bg-white dark:bg-slate-900">
+      <header className="pt-20 pb-10 border-b hairline-border bg-white dark:bg-slate-900">
         <div className="max-w-[1400px] mx-auto px-6 text-center">
           <span className="text-metadata text-accent mb-6 block">Consultation Services</span>
           <h1 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-[0.95] text-secondary dark:text-white mb-12">
@@ -25,7 +25,7 @@ const WorkWithMe: React.FC = () => {
         </div>
       </header>
 
-      <div className="max-w-[1400px] mx-auto px-6 py-24">
+      <div className="max-w-[1400px] mx-auto px-6 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
 
           {/* LEFT COLUMN: PROTOCOLS */}
@@ -38,7 +38,7 @@ const WorkWithMe: React.FC = () => {
                 { title: "Trial-to-Transaction", desc: "Redesigning demo plot strategies to maximize sales conversion rates among key farmer clusters." },
                 { title: "Sales Bootcamp", desc: "Turning field teams into high-impact demand creators through the Crackership Method." }
               ].map((service, i) => (
-                <div key={i} className="p-10 bg-white dark:bg-slate-900 border hairline-border hover:border-accent transition-all duration-500 rounded-none group shadow-sm">
+                <div key={i} className="p-6 bg-white dark:bg-slate-900 border hairline-border hover:border-accent transition-all duration-500 rounded-none group shadow-sm">
                   <h3 className="text-lg font-black text-secondary dark:text-white mb-4 uppercase tracking-widest group-hover:text-accent leading-tight">{service.title}</h3>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-sans">{service.desc}</p>
                 </div>
@@ -47,7 +47,7 @@ const WorkWithMe: React.FC = () => {
 
             {/* TESTIMONIAL CARD */}
             {featuredTestimonial && (
-              <div className="p-10 border hairline-border bg-slate-50 dark:bg-slate-800 rounded-none shadow-sm relative overflow-hidden">
+              <div className="p-6 border hairline-border bg-slate-50 dark:bg-slate-800 rounded-none shadow-sm relative overflow-hidden">
                 <div className="text-6xl text-accent/20 font-serif absolute top-4 right-8">"</div>
                 <blockquote className="text-xl font-serif italic text-slate-600 dark:text-slate-300 leading-relaxed mb-8 relative z-10">
                   {featuredTestimonial.quote}
@@ -65,7 +65,7 @@ const WorkWithMe: React.FC = () => {
 
           {/* RIGHT COLUMN: CONCISE FORM */}
           <div className="lg:col-span-5 sticky top-32">
-            <div className="bg-white dark:bg-slate-900 border hairline-border p-10 rounded-none shadow-xl relative overflow-hidden">
+            <div className="bg-white dark:bg-slate-900 border hairline-border p-6 rounded-none shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-20 h-20 bg-accent -rotate-45 translate-x-10 -translate-y-10"></div>
 
               <h2 className="text-2xl font-black text-secondary dark:text-white mb-2 uppercase tracking-widest">Request Briefing</h2>

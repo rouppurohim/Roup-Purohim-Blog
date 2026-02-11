@@ -6,7 +6,7 @@ const About: React.FC = () => {
   return (
     <div className="bg-background dark:bg-darkbg min-h-screen">
       {/* SECTION: INTRO - SHARP & TACTICAL */}
-      <section className="pt-32 pb-24 border-b hairline-border bg-white dark:bg-slate-900">
+      <section className="pt-20 pb-10 border-b hairline-border bg-white dark:bg-slate-900">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-7">
@@ -45,7 +45,7 @@ const About: React.FC = () => {
       </section>
 
       {/* SECTION: TACTICAL CAPABILITIES */}
-      <section className="py-32 border-b hairline-border">
+      <section className="py-10 border-b hairline-border">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="mb-20">
             <span className="text-metadata text-slate-400 mb-4 block">Core Strategic Competencies</span>
@@ -57,7 +57,7 @@ const About: React.FC = () => {
               { title: "Demo-to-Sales", icon: "🧪", desc: "Orchestrating field trials designed specifically to trigger brand-swapping among key farmers." },
               { title: "Channel Integrity", icon: "🔗", desc: "Auditing multi-tier distribution to prevent price leakage and ensure GTM discipline." }
             ].map((item, i) => (
-              <div key={i} className="p-10 bg-white dark:bg-slate-900 border hairline-border hover:shadow-lg transition-all duration-500 rounded-none group hover:border-accent">
+              <div key={i} className="p-6 bg-white dark:bg-slate-900 border hairline-border hover:shadow-lg transition-all duration-500 rounded-none group hover:border-accent">
                 <div className="text-4xl mb-8 group-hover:scale-110 transition-transform block grayscale">{item.icon}</div>
                 <h4 className="text-xl font-black text-secondary dark:text-white mb-6 uppercase tracking-tight group-hover:text-accent leading-tight">{item.title}</h4>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-sans">{item.desc}</p>
@@ -68,7 +68,7 @@ const About: React.FC = () => {
       </section>
 
       {/* SECTION: CAREER TRAJECTORY (TIMELINE) */}
-      <section className="py-32 bg-slate-50 dark:bg-slate-900/50">
+      <section className="py-10 bg-slate-50 dark:bg-slate-900/50">
         <div className="max-w-[1000px] mx-auto px-6">
           <div className="mb-20 text-center">
             <span className="text-metadata text-accent mb-4 block">Professional Timeline</span>
@@ -76,7 +76,7 @@ const About: React.FC = () => {
           </div>
           <div className="space-y-0 relative border-l border-slate-200 dark:border-slate-800 ml-4 md:ml-0">
             {MOCK_TIMELINE.map((item, i) => (
-              <div key={i} className="relative pl-12 pb-20 last:pb-0">
+              <div key={i} className="relative pl-12 pb-10 last:pb-0">
                 <div className="absolute left-0 top-0 -translate-x-[5px] w-3 h-3 bg-secondary dark:bg-white rounded-full border-4 border-white dark:border-slate-900"></div>
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-baseline">
                   <div className="md:col-span-3">
@@ -94,7 +94,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-32 bg-secondary text-white text-center relative overflow-hidden rounded-none">
+      <section className="py-12 bg-secondary text-white text-center relative overflow-hidden rounded-none">
         <div className="max-w-[1400px] mx-auto px-6 relative z-10">
           <h2 className="text-5xl font-black mb-16 tracking-tighter uppercase leading-none">Architect Your <br />Market Dominance.</h2>
           <Link to="/work-with-me" className="inline-block bg-accent text-white px-20 py-8 text-[12px] font-black uppercase tracking-[0.4em] hover:bg-white hover:text-primary transition-all rounded-none shadow-2xl">

@@ -3,3 +3,11 @@ compatibility_date = "2024-01-01"
 pages_build_output_dir = "./dist"
 
 
+[[d1_databases]]
+binding = "DB"
+database_name = "roup-blog-db"
+database_id = "roup-blog-db-id" # Placeholder, will be replaced by real ID if user runs create command
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "roup-blog-assets"

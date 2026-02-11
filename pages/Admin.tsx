@@ -36,7 +36,7 @@ const Admin: React.FC = () => {
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        if (pin === '2025') {
+        if (pin === '120Fathya') {
             setIsAuthenticated(true);
             setError('');
         } else {
@@ -137,6 +137,30 @@ ${newPost.content}
 
         const keywordArray = tags.split(',').map(t => t.trim()).filter(t => t);
 
+        let imageUrl = '/placeholder.jpg';
+        if (files && files[0]) {
+            const formData = new FormData();
+            formData.append('file', files[0]);
+
+            try {
+                const uploadRes = await fetch('/api/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                const uploadData = await uploadRes.json();
+                if (uploadData.success) {
+                    imageUrl = `/cdn-cgi/imagedelivery/${uploadData.key}`;
+                } else {
+                    throw new Error(uploadData.error || 'Image upload failed');
+                }
+            } catch (uploadError: any) {
+                setPublishStatus('error');
+                setPublishMessage(`Image upload error: ${uploadError.message}`);
+                setIsPublishing(false);
+                return;
+            }
+        }
+
         const postData = {
             title,
             slug,
@@ -145,7 +169,7 @@ ${newPost.content}
             category,
             lang: 'en',
             status: 'published',
-            featured_image_url: files && files[0] ? `/${files[0].name}` : '/placeholder.jpg',
+            featured_image_url: imageUrl,
             meta_title: metaTitle || title,
             meta_description: metaDesc || excerpt,
             focus_keyword: focusKeyword,

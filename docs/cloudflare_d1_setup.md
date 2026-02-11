@@ -1,6 +1,6 @@
-# Cloudflare D1 Backend Setup
+# Cloudflare D1 & R2 Backend Setup
 
-Panduan lengkap untuk setup backend Cloudflare D1 dan mengaktifkan fitur **Publish to Blog** di Admin Panel.
+Panduan lengkap untuk setup backend Cloudflare D1 (Database) dan R2 (Storage), serta mengaktifkan fitur **Publish to Blog** di Admin Panel.
 
 ## Arsitektur
 
@@ -9,16 +9,21 @@ Panduan lengkap untuk setup backend Cloudflare D1 dan mengaktifkan fitur **Publi
 │   Admin Panel   │────▶│  Hono API        │────▶│ Cloudflare  │
 │   (React)       │     │  (functions/)    │     │ D1 Database │
 └─────────────────┘     └──────────────────┘     └─────────────┘
+                                   │
+                                   └────────────▶┌─────────────┐
+                                                 │ Cloudflare  │
+                                                 │ R2 Storage  │
+                                                 └─────────────┘
 ```
 
 ## File yang Dibuat
 
 | File | Deskripsi |
 |------|-----------|
-| `wrangler.toml` | Konfigurasi Cloudflare Pages + D1 binding |
+| `wrangler.toml` | Konfigurasi Cloudflare Pages + D1 + R2 binding |
 | `db/schema.sql` | Schema database SQLite untuk tabel posts |
-| `functions/api/[[path]].ts` | API Routes menggunakan Hono framework |
-| `hooks/usePosts.ts` | React hooks untuk fetch data dari API |
+| `functions/api/[[path]].ts` | API Routes menggunakan Hono framework (CRUD + Upload) |
+| `pages/Admin.tsx` | Admin Panel untuk membuat artikel dan upload gambar |
 
 ---
 
@@ -33,30 +38,31 @@ npm install wrangler --save-dev --legacy-peer-deps
 ```bash
 npx wrangler login
 ```
-
 Browser akan terbuka untuk autentikasi. Ikuti instruksi di layar.
 
-## Langkah 3: Buat Database D1
+## Langkah 3: Setup D1 Database
 
-```bash
-npx wrangler d1 create roup-blog-db
-```
+1. **Buat Database:**
+   ```bash
+   npx wrangler d1 create roup-blog-db
+   ```
+   *Salin `database_id` dari output yang muncul.*
 
-**Output yang dihasilkan:**
+2. **Inisialisasi Schema:**
+   ```bash
+   npx wrangler d1 execute roup-blog-db --file=db/schema.sql
+   ```
 
-```
-✅ Successfully created DB 'roup-blog-db' in region APAC
-Created your new D1 database.
+## Langkah 4: Setup R2 Storage
 
-[[d1_databases]]
-binding = "DB"
-database_name = "roup-blog-db"
-database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"   <-- COPY INI
-```
+1. **Buat Bucket:**
+   ```bash
+   npx wrangler r2 bucket create roup-blog-assets
+   ```
 
-## Langkah 4: Update `wrangler.toml`
+## Langkah 5: Update `wrangler.toml`
 
-Buka file `wrangler.toml` dan ganti `PLACEHOLDER_DATABASE_ID` dengan `database_id` dari output di atas:
+Buka file `wrangler.toml` dan pastikan konfigurasi berikut ada. Ganti `database_id` dengan ID asli Anda.
 
 ```toml
 name = "roup-purohim-blog"
@@ -66,118 +72,61 @@ pages_build_output_dir = "./dist"
 [[d1_databases]]
 binding = "DB"
 database_name = "roup-blog-db"
-database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"  # <-- GANTI INI
+database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" # <-- GANTI DENGAN ID ASLI
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "roup-blog-assets"
 ```
 
-## Langkah 5: Jalankan Schema SQL
+## Langkah 6: Test Lokal
+
+Untuk menjalankan frontend + backend (termasuk upload gambar):
 
 ```bash
-npx wrangler d1 execute roup-blog-db --file=db/schema.sql
-```
-
-Perintah ini akan membuat tabel `posts` dengan semua kolom yang diperlukan.
-
-## Langkah 6: Test Lokal dengan Wrangler
-
-```bash
-# Build dulu
+# Build projek
 npm run build
 
-# Jalankan Wrangler Pages dev server
+# Jalankan dengan Wrangler (D1 & R2 binding otomatis)
 npx wrangler pages dev ./dist
 ```
-
-Server akan berjalan di `http://localhost:8788`.
-
----
-
-## API Endpoints
-
-| Method | Endpoint | Deskripsi |
-|--------|----------|-----------|
-| GET | `/api/posts` | Ambil semua artikel published |
-| GET | `/api/posts/:slug` | Ambil artikel berdasarkan slug |
-| POST | `/api/posts` | Buat artikel baru (Admin) |
-| PUT | `/api/posts/:id` | Update artikel |
-| DELETE | `/api/posts/:id` | Hapus artikel |
-
-### Contoh Request POST
-
-```json
-{
-  "title": "Judul Artikel",
-  "slug": "judul-artikel",
-  "excerpt": "Ringkasan singkat...",
-  "content": "Isi artikel dalam Markdown...",
-  "category": "Market Strategy & GTM",
-  "featured_image_url": "/gambar.jpg",
-  "meta_title": "SEO Title",
-  "meta_description": "SEO Description",
-  "focus_keyword": "keyword utama",
-  "tags": ["tag1", "tag2"],
-  "json_ld": { "@type": "Article", ... }
-}
-```
+Akses di `http://localhost:8788`.
 
 ---
 
 ## Deploy ke Cloudflare Pages
 
-### Via Dashboard
+### 1. Push ke GitHub
+Pastikan semua perubahan sudah di-commit dan di-push ke repository GitHub Anda.
 
-1. Push kode ke GitHub
-2. Buka [Cloudflare Pages Dashboard](https://dash.cloudflare.com/?to=/:account/pages)
-3. Klik **Create a project** → **Connect to Git**
-4. Pilih repository
-5. Setting build:
-   - **Build command**: `npm run build`
-   - **Build output directory**: `dist`
-6. Klik **Save and Deploy**
+### 2. Setup via Dashboard
+1. Buka [Cloudflare Pages Dashboard](https://dash.cloudflare.com/?to=/:account/pages).
+2. Connect ke Git repo jika belum.
+3. Setting Build:
+   - **Command**: `npm run build`
+   - **Output directory**: `dist`
 
-### Via CLI
+### 3. Konfigurasi Binding (PENTING!)
+Setelah project dibuat/terdeploy, Anda **HARUS** menambahkan binding secara manual di dashboard agar database dan storage bisa diakses.
 
-```bash
-npx wrangler pages deploy ./dist
-```
-
----
-
-## Binding D1 di Production
-
-Setelah deploy pertama kali:
-
-1. Buka Cloudflare Pages Dashboard
-2. Pilih project `roup-purohim-blog`
-3. Pergi ke **Settings** → **Functions** → **D1 database bindings**
-4. Klik **Add binding**
-   - Variable name: `DB`
-   - D1 database: `roup-blog-db`
-5. **Save**
-6. Re-deploy agar binding aktif
+1. Buka project `roup-purohim-blog` di dashboard.
+2. Pergi ke **Settings** -> **Functions**.
+3. Scroll ke bagian **D1 database bindings**:
+   - **Variable name**: `DB`
+   - **D1 database**: Pilih `roup-blog-db`
+4. Scroll ke bagian **R2 bucket bindings**:
+   - **Variable name**: `BUCKET`
+   - **R2 bucket**: Pilih `roup-blog-assets`
+5. **Save** semua perubahan.
+6. Pergi ke tab **Deployments** dan lakukan **Retry deployment** (atau push commit baru) agar binding aktif.
 
 ---
 
-## Troubleshooting
+## Akses Admin
+URL: `/admin`
+PIN: `120Fathya`
 
-### Error: "D1_ERROR: no such table: posts"
-Solusi: Jalankan ulang schema SQL
-```bash
-npx wrangler d1 execute roup-blog-db --file=db/schema.sql
-```
-
-### Error: "Cannot find module 'hono'"
-Ini normal saat development dengan Vite. Hono hanya dijalankan di Cloudflare Workers runtime.
-
-### API tidak merespons di localhost
-Pastikan menggunakan `wrangler pages dev` bukan `npm run dev` untuk test API.
-
----
-
-## Catatan Penting
-
-> ⚠️ **Development vs Production**
-> 
-> - `npm run dev` → Frontend saja (mock data)
-> - `npx wrangler pages dev ./dist` → Frontend + API (D1 database)
-
-Untuk development sehari-hari, gunakan `npm run dev`. Gunakan `wrangler pages dev` hanya saat testing API atau sebelum deploy.
+Admin panel sekarang sudah mendukung:
+- Membuat artikel baru (Text & Markdown).
+- **Upload gambar langsung** (tersimpan otomatis di R2).
+- Auto-generate slug dan SEO metadata.

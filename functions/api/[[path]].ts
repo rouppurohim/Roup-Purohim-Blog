@@ -3,6 +3,7 @@ import { cors } from 'hono/cors';
 
 type Bindings = {
     DB: D1Database;
+    BUCKET: R2Bucket;
 };
 
 const app = new Hono<{ Bindings: Bindings }>().basePath('/api');
@@ -135,6 +136,39 @@ app.put('/posts/:id', async (c) => {
         ).run();
 
         return c.json({ success: true, message: 'Post updated successfully' });
+    } catch (error: any) {
+        return c.json({ success: false, error: error.message }, 500);
+    }
+});
+
+// POST /api/upload - Upload image to R2
+app.post('/upload', async (c) => {
+    try {
+        const body = await c.req.parseBody();
+        const file = body['file'];
+
+        if (!(file instanceof File)) {
+            return c.json({ success: false, error: 'No file uploaded' }, 400);
+        }
+
+        const fileName = `${Date.now()}-${file.name}`;
+        await c.env.BUCKET.put(fileName, file);
+
+        // Assuming R2 bucket is public or served via custom domain
+        // For dev/preview, we might need a specific domain. 
+        // Using a placeholder domain or relative path if served via this same worker (which handles /api/* only right now).
+        // Best practice: Use a public bucket domain or another route to serve.
+        const imageUrl = `/cdn-cgi/imagedelivery/${fileName}`; // Placeholder pattern or specific R2 public URL
+        // Actually, for simple R2 public access usually it's https://pub-<id>.r2.dev/<key> or custom domain.
+        // Let's return the key for now, or a constructed URL if user provides configured domain.
+        // For this setup, we'll return a relative path assuming we might set up a proxy or just the key.
+        
+        return c.json({ 
+            success: true, 
+            message: 'Image uploaded successfully', 
+            url: fileName, // Client should know base URL or we configure it
+            key: fileName 
+        });
     } catch (error: any) {
         return c.json({ success: false, error: error.message }, 500);
     }

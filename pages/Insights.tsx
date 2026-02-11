@@ -38,7 +38,7 @@ const Insights: React.FC = () => {
 
   return (
     <div className="bg-background dark:bg-darkbg min-h-screen">
-      <header className="pt-32 pb-20 border-b hairline-border bg-white dark:bg-slate-900">
+      <header className="pt-20 pb-10 border-b hairline-border bg-white dark:bg-slate-900">
         <div className="max-w-[1400px] mx-auto px-6">
           <span className="text-metadata text-accent mb-6 block">Blog Archive</span>
           <h1 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-[0.95] text-secondary dark:text-white mb-12">
@@ -71,11 +71,11 @@ const Insights: React.FC = () => {
         </div>
       </header>
 
-      <section className="py-24">
+      <section className="py-10">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-l border-t hairline-border">
             {filteredPosts.slice(0, visibleCount).map((post) => (
-              <article key={post.id} className="group bg-white dark:bg-slate-900 p-8 border-r border-b hairline-border hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-500 flex flex-col rounded-none">
+              <article key={post.id} className="group bg-white dark:bg-slate-900 p-6 border-r border-b hairline-border hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-500 flex flex-col rounded-none">
                 <div className="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800 mb-10 grayscale group-hover:grayscale-0 transition-all duration-700 rounded-none border hairline-border">
                   <img
                     src={post.featured_image_url}
