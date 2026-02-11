@@ -6,7 +6,7 @@ pages_build_output_dir = "./dist"
 [[d1_databases]]
 binding = "DB"
 database_name = "roup-blog-db"
-database_id = "roup-blog-db-id" # Placeholder, will be replaced by real ID if user runs create command
+database_id = "9c1791bd-07dd-4867-876d-634ac5f7ed5d" # Actual ID from creation
 
 [[r2_buckets]]
 binding = "BUCKET"
